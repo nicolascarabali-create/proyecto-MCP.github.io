@@ -4,955 +4,357 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Amalakay | IA Mecatrónica + MCP</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>
+AMALAKAY | Engineering AI
+</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<style>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-:root{
-  --bg:#050816;
-  --card:#0f172a;
-  --border:#1e293b;
-  --primary:#38bdf8;
-  --primary2:#2563eb;
-  --white:#f8fafc;
-  --text:#cbd5e1;
-}
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
-.dots {
-  display: flex;
-  gap: 4px;
-  margin-left: 8px;
-}
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-.dots span {
-  width: 6px;
-  height: 6px;
-  background: #38bdf8;
-  border-radius: 50%;
-  animation: blink 1.2s infinite;
-}
+<link
+rel="stylesheet"
+href="style.css"
+/>
 
-.dots span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.dots span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes blink {
-  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
-  40% { opacity: 1; transform: scale(1.2); }
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:
-  radial-gradient(circle at top left,#10214d 0%,transparent 35%),
-  radial-gradient(circle at bottom right,#07152f 0%,transparent 35%),
-  var(--bg);
-
-  color:white;
-  overflow-x:hidden;
-  font-family:'Poppins',sans-serif;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-  width:100%;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:999;
-  padding:18px 8%;
-  backdrop-filter:blur(14px);
-  background:rgba(5,8,22,0.7);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.logo-circle{
-  width:50px;
-  height:50px;
-  border-radius:16px;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight:bold;
-  font-size:20px;
-  box-shadow:0 0 25px rgba(56,189,248,.4);
-}
-
-.logo h1{
-  font-family:'Orbitron',sans-serif;
-  font-size:1.5rem;
-}
-
-.nav-links{
-  display:flex;
-  gap:35px;
-}
-
-.nav-links a{
-  color:var(--text);
-  text-decoration:none;
-  transition:.3s;
-  font-weight:500;
-}
-
-.nav-links a:hover{
-  color:var(--primary);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-  padding:140px 8% 80px;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:70px;
-  align-items:center;
-}
-
-.hero-text h2{
-  color:var(--primary);
-  font-size:1.1rem;
-  margin-bottom:15px;
-  letter-spacing:2px;
-}
-
-.hero-text h1{
-  font-size:4.7rem;
-  line-height:1.1;
-  margin-bottom:25px;
-  font-family:'Orbitron',sans-serif;
-}
-
-.hero-text p{
-  color:var(--text);
-  font-size:1.1rem;
-  line-height:2;
-  margin-bottom:35px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:16px 35px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.3s;
-}
-
-.btn-primary{
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  color:white;
-  box-shadow:0 10px 25px rgba(37,99,235,.35);
-}
-
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.1);
-  color:white;
-  background:rgba(255,255,255,.04);
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-}
-
-/* ================= CHAT ================= */
-
-.chat-container{
-  background:rgba(15,23,42,.88);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:28px;
-  overflow:hidden;
-  backdrop-filter:blur(18px);
-  box-shadow:
-  0 0 80px rgba(56,189,248,.1),
-  0 0 30px rgba(0,0,0,.5);
-}
-
-.chat-header{
-  padding:22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:#020617;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.bot-info{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.bot-avatar{
-  width:55px;
-  height:55px;
-  border-radius:18px;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-  font-weight:bold;
-  box-shadow:0 0 20px rgba(56,189,248,.5);
-}
-
-.status{
-  color:#4ade80;
-  font-size:13px;
-  margin-top:4px;
-}
-
-.clear-btn{
-  background:#1e293b;
-  border:none;
-  color:white;
-  padding:12px 18px;
-  border-radius:14px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.clear-btn:hover{
-  background:#334155;
-}
-
-.chat-box{
-  height:500px;
-  overflow-y:auto;
-  padding:25px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.message{
-  padding:16px 20px;
-  border-radius:22px;
-  max-width:85%;
-  line-height:1.8;
-  animation:fade .3s ease;
-  word-wrap:break-word;
-}
-
-.bot{
-  background:#172033;
-  border:1px solid rgba(255,255,255,.06);
-  align-self:flex-start;
-}
-
-.user{
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  color:black;
-  align-self:flex-end;
-  font-weight:500;
-}
-
-.timestamp{
-  margin-top:8px;
-  font-size:10px;
-  opacity:.6;
-}
-
-.input-area{
-  padding:22px;
-  background:#020617;
-  display:flex;
-  gap:12px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.input-area input[type="text"]{
-  flex:1;
-  background:#1e293b;
-  border:none;
-  outline:none;
-  padding:18px;
-  border-radius:16px;
-  color:white;
-  font-size:15px;
-}
-
-.input-area input:focus{
-  box-shadow:0 0 0 2px rgba(56,189,248,.4);
-}
-
-.send-btn{
-  border:none;
-  padding:16px 24px;
-  border-radius:16px;
-  cursor:pointer;
-  font-weight:600;
-  color:white;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  transition:.3s;
-}
-
-.send-btn:hover{
-  transform:translateY(-3px);
-}
-
-.upload-btn{
-  border:none;
-  padding:16px 18px;
-  border-radius:16px;
-  cursor:pointer;
-  font-weight:600;
-  color:white;
-  background:#1e293b;
-  transition:.3s;
-}
-
-.upload-btn:hover{
-  background:#334155;
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-  padding:100px 8%;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:70px;
-}
-
-.section-title h2{
-  font-size:3rem;
-  margin-bottom:15px;
-  font-family:'Orbitron',sans-serif;
-}
-
-.section-title p{
-  color:var(--text);
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-}
-
-.card{
-  background:linear-gradient(180deg,#101b33,#0f172a);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:25px;
-  padding:35px;
-  transition:.4s;
-  position:relative;
-  overflow:hidden;
-}
-
-.card::before{
-  content:'';
-  position:absolute;
-  width:150px;
-  height:150px;
-  background:rgba(56,189,248,.07);
-  border-radius:50%;
-  top:-60px;
-  right:-60px;
-}
-
-.card:hover{
-  transform:translateY(-12px);
-  border-color:rgba(56,189,248,.35);
-}
-
-.card-icon{
-  font-size:2.5rem;
-  margin-bottom:20px;
-}
-
-.card h3{
-  margin-bottom:15px;
-  font-size:1.4rem;
-}
-
-.card p{
-  color:var(--text);
-  line-height:1.8;
-}
-
-/* ================= TECH ================= */
-
-.tech-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:25px;
-}
-
-.tech{
-  background:#0f172a;
-  border:1px solid rgba(255,255,255,.05);
-  padding:30px;
-  border-radius:22px;
-  text-align:center;
-  transition:.3s;
-}
-
-.tech:hover{
-  transform:scale(1.05);
-  border-color:rgba(56,189,248,.35);
-}
-
-.tech h3{
-  margin-top:15px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#020617;
-  padding:40px;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-footer p{
-  color:#94a3b8;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1100px){
-
-  .hero{
-    grid-template-columns:1fr;
-  }
-
-  .hero-text{
-    text-align:center;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .hero-text h1{
-    font-size:3rem;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .chat-box{
-    height:400px;
-  }
-
-  .section-title h2{
-    font-size:2rem;
-  }
-
-}
-
-</style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 
-  <div class="logo">
+<div class="logo">
 
-    <div class="logo-circle">
-      AI
-    </div>
+<div class="logo-box">
 
-    <h1>AMALAKAY</h1>
+  <img
+        src="assets/logo.png"
+        alt="AMALAKAY Logo"
+        class="logo-img">
 
-  </div>
+</div>
 
-  <div class="nav-links">
-    <a href="#inicio">Inicio</a>
-    <a href="#funciones">Funciones</a>
-    <a href="#tecnologias">Tecnologías</a>
-    <a href="#chatbot">ChatBot</a>
-  </div>
+   <div class="logo-text">
+<h1>AMALAKAY</h1>
+<span>
+Engineering Intelligence
+</span>
+</div>
+
+</div>
+
+<div class="nav-links">
+
+<a href="#inicio">
+Inicio
+</a>
+
+<a href="#capacidades">
+Capacidades
+</a>
+
+<a href="#tecnologias">
+Tecnologías
+</a>
+
+<a href="chat.html">
+Chat IA
+</a>
+
+
+</div>
+
+<a
+class="github-btn"
+target="_blank"
+href="https://github.com/nicolascarabali-create/proyecto-MCP">
+
+GitHub
+
+</a>
 
 </nav>
 
-<section class="hero" id="inicio">
+<!-- HERO -->
 
-  <div class="hero-text">
+<section
+class="hero"
+id="inicio">
 
-    <h2>SISTEMA MECATRÓNICO INTELIGENTE</h2>
+<div class="hero-left">
+<div class="hero-content">
 
-    <h1>
-      IA + MCP
-      <br>
-      PARA MECATRÓNICA
-    </h1>
+<p class="hero-subtitle">
 
-    <p>
-      Plataforma profesional desarrollada para integración
-      de inteligencia artificial aplicada a proyectos
-      de ingeniería mecatrónica y automatización.
-    </p>
+MECATRÓNICA + IA + MCP
 
-    <div class="hero-buttons">
+</p>
 
-      <a href="#chatbot" class="btn btn-primary">
-        Probar IA
-      </a>
+<h1>
 
-      <a href="#funciones" class="btn btn-secondary">
-        Ver Funciones
-      </a>
+IA para
+<span>Mecatrónica</span>,
+Automatización
+y Control
 
+</h1>
+
+<p class="hero-description">
+
+AMALAKAY es una
+plataforma de inteligencia
+artificial especializada en:
+
+<br><br>
+
+<div class="skills-grid">
+
+    <div class="skill-card">
+        ⚙️ Mecatrónica
     </div>
 
-  </div>
-
-  <!-- CHAT -->
-
-  <div class="chat-container" id="chatbot">
-
-    <div class="chat-header">
-
-      <div class="bot-info">
-
-        <div class="bot-avatar">
-          🤖
-        </div>
-
-        <div>
-          <h3>Amalakay AI</h3>
-
-          <div class="status">
-            ● MCP Conectado
-          </div>
-        </div>
-
-      </div>
-
-      <button class="clear-btn" onclick="clearChat()">
-        Limpiar
-      </button>
-
+    <div class="skill-card">
+        🏭 PLC Industrial
     </div>
 
-    <div class="chat-box" id="chatBox">
-
-      <div class="message bot">
-
-        👋 Hola, soy <strong>Amalakay</strong>.
-        Estoy entrenado exclusivamente para responder temas
-        relacionados con mecatrónica, robótica, automatización,
-        control industrial, electrónica, programación
-        e inteligencia artificial aplicada.
-
-        <div class="timestamp">
-          Sistema iniciado
-        </div>
-
-      </div>
-
+    <div class="skill-card">
+        🤖 Arduino / ESP32
     </div>
 
-    <div class="input-area">
-
-      <input
-type="file"
-id="fileInput"
-accept=".pdf,.txt,.py,.ino,.cpp,.json"
-hidden
->
-
-      <button
-        class="upload-btn"
-        onclick="uploadFile()"
-      >
-        📎
-      </button>
-
-      <input
-        type="text"
-        id="userInput"
-        placeholder="Pregunta algo sobre mecatrónica..."
-      >
-
-      <button
-        class="send-btn"
-        id="sendBtn"
-      >
-        Enviar
-      </button>
-
+    <div class="skill-card">
+        💻 Python / C++
     </div>
 
-  </div>
+    <div class="skill-card">
+        🔌 Electrónica
+    </div>
 
+    <div class="skill-card">
+        📡 Automatización
+    </div>
+
+    <div class="skill-card">
+        📄 Lectura PDF
+    </div>
+
+    <div class="skill-card">
+        📊 Análisis técnico
+    </div>
+
+    <div class="skill-card">
+        🧠 Ingeniería aplicada
+    </div>
+
+</div>
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="chat.html"
+class="btn btn-primary">
+
+Abrir Amalakay AI
+
+</a>
+
+
+<a
+href="#capacidades"
+class="btn btn-secondary">
+
+Ver capacidades
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PERSONAJE -->
+
+<div class="hero-right">
+
+    <img
+    src="assets/character.png"
+    alt="Amalakay Character"
+    class="hero-character">
+
+</div>
 </section>
 
-<!-- FUNCIONES -->
+<!-- CAPACIDADES -->
 
-<section id="funciones">
+<section
+id="capacidades"
+class="section">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <h2>FUNCIONES PRINCIPALES</h2>
+<h2>
+Capacidades Reales
+</h2>
 
-    <p>
-      Plataforma inteligente enfocada en ingeniería mecatrónica.
-    </p>
+<p>
+Herramientas integradas
+actualmente en Amalakay
+</p>
 
-  </div>
+</div>
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
+<div class="card">
 
-      <div class="card-icon">⚙️</div>
+<i class="fas fa-file-pdf"></i>
 
-      <h3>Automatización Industrial</h3>
+<h3>
+Lectura PDF
+</h3>
 
-      <p>
-        Integración de sistemas automáticos
-        para control y supervisión industrial.
-      </p>
+<p>
+Analiza documentación,
+manuales técnicos,
+reportes e informes.
+</p>
 
-    </div>
+</div>
 
-    <div class="card">
+<div class="card">
 
-      <div class="card-icon">🤖</div>
+<i class="fas fa-code"></i>
 
-      <h3>Robótica Inteligente</h3>
+<h3>
+Análisis de Código
+</h3>
 
-      <p>
-        Desarrollo de soluciones robóticas
-        con algoritmos de control avanzado.
-      </p>
+<p>
+Arduino, Python,
+C++, automatización
+y lógica industrial.
+</p>
 
-    </div>
+</div>
 
-    <div class="card">
+<div class="card">
 
-      <div class="card-icon">🧠</div>
+<i class="fas fa-calculator"></i>
 
-      <h3>IA Aplicada</h3>
+<h3>
+Cálculo Ingeniería
+</h3>
 
-      <p>
-        Inteligencia artificial orientada
-        a proyectos de ingeniería.
-      </p>
+<p>
+Soporte matemático,
+ecuaciones y análisis
+de ingeniería.
+</p>
 
-    </div>
+</div>
 
-    <div class="card">
+<div class="card">
 
-      <div class="card-icon">💻</div>
+<i class="fas fa-globe"></i>
 
-      <h3>Programación Técnica</h3>
+<h3>
+MCP Web Search
+</h3>
 
-      <p>
-        Soporte en programación aplicada
-        a automatización y electrónica.
-      </p>
+<p>
+Consulta información
+especializada
+en tiempo real.
+</p>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 <!-- TECNOLOGIAS -->
 
-<section id="tecnologias">
+<section
+id="tecnologias"
+class="section">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <h2>TECNOLOGÍAS</h2>
+<h2>
+Tecnologías
+</h2>
 
-    <p>
-      Herramientas utilizadas en el sistema.
-    </p>
+</div>
 
-  </div>
+<div class="tech-grid">
 
-  <div class="tech-grid">
+<div class="tech">
+Arduino
+</div>
 
-    <div class="tech"><h3>HTML5</h3></div>
-    <div class="tech"><h3>CSS3</h3></div>
-    <div class="tech"><h3>JavaScript</h3></div>
-    <div class="tech"><h3>Node.js</h3></div>
-    <div class="tech"><h3>Python</h3></div>
-    <div class="tech"><h3>Arduino</h3></div>
-    <div class="tech"><h3>MCP</h3></div>
-    <div class="tech"><h3>OpenAI</h3></div>
+<div class="tech">
+ESP32
+</div>
 
-  </div>
+<div class="tech">
+PLC
+</div>
+
+<div class="tech">
+Python
+</div>
+
+<div class="tech">
+C++
+</div>
+
+<div class="tech">
+n8n
+</div>
+
+<div class="tech">
+GPT-5
+</div>
+
+<div class="tech">
+MCP
+</div>
+
+</div>
 
 </section>
 
 <footer>
 
-  <p>
-    Proyecto Profesional de Ingeniería Mecatrónica |
-    Amalakay IA + MCP © 2026
-  </p>
+<p>
+
+AMALAKAY AI © 2026
+
+</p>
 
 </footer>
 
-<script>
-
-const API_URL =
-"https://amalakay.app.n8n.cloud/webhook/amalakay-chat";
-
-const chatBox = document.getElementById("chatBox");
-const userInput = document.getElementById("userInput");
-const sendBtn = document.getElementById("sendBtn");
-
-userInput.addEventListener("keypress", function(e){
-
-  if(e.key === "Enter"){
-    sendMessage();
-  }
-
-});
-
-sendBtn.addEventListener("click", sendMessage);
-
-function getTime(){
-
-  return new Date().toLocaleTimeString([],{
-    hour:'2-digit',
-    minute:'2-digit'
-  });
-
-}
-
-function showTyping() {
-
-  const typingDiv = document.createElement("div");
-  typingDiv.classList.add("message", "bot");
-  typingDiv.id = "typing";
-
-  typingDiv.innerHTML = `
-    <div style="display:flex;gap:5px;align-items:center">
-      <span>Amalakay está pensando</span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  `;
-
-  chatBox.appendChild(typingDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-function removeTyping() {
-  const typing = document.getElementById("typing");
-  if (typing) typing.remove();
-}
-
-function addMessage(text,sender){
-
-  const messageDiv = document.createElement("div");
-
-  messageDiv.classList.add("message",sender);
-
-  messageDiv.innerHTML = `
-    ${text}
-    <div class="timestamp">
-      ${getTime()}
-    </div>
-  `;
-
-  chatBox.appendChild(messageDiv);
-
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-}
-
-function clearChat(){
-
-  chatBox.innerHTML = `
-  
-    <div class="message bot">
-
-      👋 Chat reiniciado correctamente.
-
-      <div class="timestamp">
-        ${getTime()}
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-async function sendMessage(){
-
-  const message = userInput.value.trim();
-
-  if(!message) return;
-
-  addMessage(message,"user");
-
-  userInput.value = "";
-
-    showTyping(); // 🔵 APARECE “pensando”
-
-  try{
-
-    const response = await fetch(API_URL,{
-
-      method:"POST",
-
-      headers:{
-        "Content-Type":"application/json"
-      },
-
-      body: JSON.stringify({
-  message: message
-})
-
-    });
-    
-
-    if(!response.ok){
-      throw new Error("Error");
-    }
-
-    const text = await response.text();
-
-console.log(text);
-
-const data = JSON.parse(text);
-
-       removeTyping(); // 🔴 QUITA “pensando”
-
-    addMessage(
-      data.response ||
-      "No se recibió respuesta.",
-      "bot"
-    );
-
-  }catch(error){
-
-    addMessage(
-      "❌ Error conectando con el servidor MCP.",
-      "bot"
-    );
-
-    console.error(error);
-
-  }
-
-}
-
-/* ================= SUBIR ARCHIVOS ================= */
-
-function uploadFile(){
-  document.getElementById("fileInput").click();
-}
-
-document.getElementById("fileInput").addEventListener("change", async function(){
-
-  const file = this.files[0];
-  if(!file) return;
-
-  const form = new FormData();
-  form.append("file", file);
-
-  // 👇 mensaje del usuario
-  addMessage("📎 Archivo enviado: " + file.name, "user");
-
-  // 👇 animación pensando
-  showTyping();
-
-  try{
-
-    const res = await fetch(
-"https://amalakay.app.n8n.cloud/webhook/amalakay-upload",
-{
-method:"POST",
-body:form
-});
-
-    const data = await res.json();
-
-    removeTyping();
-
-    addMessage(
-      data.response || "Archivo procesado correctamente.",
-      "bot"
-    );
-
-  } catch (err) {
-
-    removeTyping();
-
-    addMessage("❌ Error al procesar el archivo.", "bot");
-
-    console.error(err);
-  }
-
-});
-
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

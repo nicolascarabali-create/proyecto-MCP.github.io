@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>
+Amalakay AI | Chat
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+<link
+rel="stylesheet"
+href="style.css"
+/>
+
+</head>
+
+<body class="chat-page">
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-box">
+
+  <img
+  src="assets/logo.png"
+  alt="AMALAKAY Logo"
+  class="logo-img"
+  />
+
+</div>
+
+<div>
+
+<h1>
+AMALAKAY
+</h1>
+
+<span>
+Engineering Intelligence
+</span>
+
+</div>
+
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#capacidades">
+Capacidades
+</a>
+
+<a href="index.html#tecnologias">
+Tecnologías
+</a>
+
+</div>
+
+<a
+class="github-btn"
+href="index.html">
+
+← Volver
+
+</a>
+
+</nav>
+
+<section class="chat-page-container">
+
+<div class="section-title">
+
+<h2>
+Amalakay AI
+</h2>
+
+<p>
+Asistente técnico de
+mecatrónica e ingeniería
+</p>
+
+</div>
+
+<div class="chat-container">
+
+<div class="chat-header">
+
+<div class="bot-info">
+
+<div class="bot-avatar">
+🤖
+</div>
+
+<div>
+
+<h3>
+Amalakay AI
+</h3>
+
+<div class="status">
+● Sistema conectado
+</div>
+
+</div>
+
+</div>
+
+<button
+class="clear-btn"
+onclick="clearChat()">
+
+Limpiar
+
+</button>
+
+</div>
+
+<div
+class="chat-box"
+id="chatBox">
+
+<div class="message bot">
+
+👋 Bienvenido a
+<strong>
+Amalakay AI
+</strong>
+
+<br><br>
+
+Estoy especializado en:
+
+<br><br>
+
+✅ Mecatrónica<br>
+✅ PLC<br>
+✅ Arduino<br>
+✅ Python / C++<br>
+✅ Automatización<br>
+✅ Electrónica<br>
+✅ Lectura PDF<br>
+✅ Ingeniería aplicada
+
+<div class="timestamp">
+Sistema iniciado
+</div>
+
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input
+type="file"
+id="fileInput"
+accept=".pdf,.txt,.cpp,.py,.ino"
+hidden
+/>
+
+<button
+class="upload-btn"
+onclick="uploadFile()">
+
+📎
+
+</button>
+
+<input
+type="text"
+id="userInput"
+placeholder="Pregunta algo de ingeniería..."
+/>
+
+<button
+class="send-btn"
+id="sendBtn">
+
+Enviar
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
