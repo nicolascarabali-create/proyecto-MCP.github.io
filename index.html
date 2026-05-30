@@ -864,28 +864,9 @@ async function sendMessage(){
         "Content-Type":"application/json"
       },
 
-      body:JSON.stringify({
-
-        message:
-        `
-        Eres Amalakay, una IA especializada en:
-
-        - Mecatrónica
-        - Robótica
-        - Automatización industrial
-        - Electrónica
-        - PLC
-        - Control industrial
-        - Arduino
-        - Programación aplicada
-        - Inteligencia artificial aplicada a ingeniería
-
-
-        Pregunta del usuario:
-        ${message}
-        `
-
-      })
+      body: JSON.stringify({
+  message: message
+})
 
     });
     
